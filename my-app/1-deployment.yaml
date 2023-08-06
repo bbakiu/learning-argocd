@@ -8,11 +8,13 @@ metadata:
     app: nginx
 spec:
   replicas: 1
+  namespace: prod
   selector:
     matchLabels:
       app: nginx
   template:
     metadata:
+      namespace: prod
       labels:
         app: nginx
     spec:

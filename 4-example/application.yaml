@@ -19,6 +19,13 @@ spec:
       parameters:
         - name: "image.tag"
           value: "v0.6.2"
+      values: |
+        defaultArgs:
+        - --cert-dir=/tmp
+        - --kubelet-prefered-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-use-node-status-port
+        - --metrics-resolution-15s
+        - --kubelet-insecure-tls
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
